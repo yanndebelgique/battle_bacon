@@ -14,5 +14,10 @@ Router.map(function () {
     Example:
       this.route('home', {path: '/'});
   */
-  this.route('kitchen', {path: '/kitchen'});
+  this.route('kitchen', {
+    path: '/kitchen',
+    waitOn : function () {
+      return Meteor.subscribe('user_data');
+    }
+  });
 });
