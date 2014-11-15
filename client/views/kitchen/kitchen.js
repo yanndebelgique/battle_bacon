@@ -14,7 +14,10 @@ Template.Kitchen.events({
 Template.Kitchen.helpers({
   
   'users' : function () {
-    return Meteor.users.find();
+
+    var myUserId = Meteor.userId();
+
+    return Meteor.users.find({_id : {$ne : myUserId}});
   },
   'getUserEmail' : function (user) {
     return user.emails[0].address;
