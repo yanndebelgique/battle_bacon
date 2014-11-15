@@ -1,0 +1,21 @@
+
+<template name="Kitchen">
+
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+            <ul class="list-group">
+              {{#each users}}
+
+              <li class="list-group-item">
+                {{getUserEmail this}}
+              </li>
+
+              {{/each}}
+            </ul>
+          </div>
+      </div>
+  </div>
+
+</template>
+
